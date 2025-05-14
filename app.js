@@ -6,15 +6,15 @@ const winston = require('winston');
 
 const nunjucks = require('nunjucks');
 
+// Initialize the Express app first
+const app = express();
+const port = process.env.PORT || 3000;
+
 // Set up Nunjucks templating engine
 nunjucks.configure('templates', {
   autoescape: true,
   express: app
 });
-
-
-const app = express();
-const port = process.env.PORT || 3000;
 
 // --- Logger ---
 const logger = winston.createLogger({
@@ -124,28 +124,6 @@ app.get('/get-info', validateQueryParams, (req, res) => {
   cache.put(cacheKey, result);
   res.json(result);
 });
-
-
-
-app.post('/chat', (req, res) => {
-  const userMessage = req.body.message;
-  let nextState = 'welcome'; // Default starting state
-
-  // Determine next state based on user input (simplified logic)
-  if (userMessage.includes('menu')) {
-    nextState = 'fetch_info';
-  } else if (userMessage.includes('cancel')) {
-    nextState = 'cancel_booking';
-  }
-
-  // Trigger the appropriate Jinja template
-  const templateResponse = renderTemplateForState(nextState, req.body);
-  
-  res.json({ response: templateResponse });
-});
-
-
-
 
 // --- Error Handler ---
 app.use((err, req, res, next) => {
