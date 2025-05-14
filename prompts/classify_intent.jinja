@@ -1,0 +1,26 @@
+Let's figure out what you're asking for.
+
+{% if query | lower in ['menu', 'food', 'drinks', 'items'] %}
+    I understand you want information about our menu. What type of items are you looking for? We have both food and drinks!
+
+{% elif query | lower in ['timing', 'hours', 'opening', 'closing'] %}
+    It looks like you're asking about our timings. I can help you with the opening and closing hours.
+
+{% elif query | lower in ['pricing', 'cost', 'price'] %}
+    You're interested in our pricing. I can tell you about the costs for our menu items and services.
+
+{% elif query | lower in ['services', 'features', 'facilities'] %}
+    You want to know more about our services. We offer a wide range of facilities, and I can provide the details.
+
+{% elif query | lower in ['new booking', 'book a table', 'reservation'] %}
+    It seems like you're looking to make a new booking. Please provide the details, and I'll reserve a table for you.
+
+{% elif query | lower in ['modify', 'edit', 'change', 'update', 'alter', 'modify booking'] %}
+    I see that you want to modify an existing booking. Please share the booking ID or details so I can assist you.
+
+{% elif query | lower in ['cancel', 'delete', 'remove', 'cancel booking'] %}
+    You're looking to cancel a booking. Please provide the booking ID, and I'll take care of it for you.
+
+{% else %}
+    I'm sorry, I didn't quite understand your request. Could you please clarify what you're looking for?
+{% endif %}

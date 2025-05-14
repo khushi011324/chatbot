@@ -1,0 +1,29 @@
+const fetchInfoTemplate = nunjucks.render('fetch_info.jinja', {
+  location: userLocation,
+  query_type: userQueryType
+});
+
+
+{% if location == 'bangalore' %}
+    I will fetch the information for you from our Bangalore outlet.
+{% elif location == 'delhi' %}
+    I will fetch the information for you from our Delhi outlet.
+{% else %}
+    I'm sorry, I don't have information for this location at the moment. Can you specify either Bangalore or Delhi?
+{% endif %}
+
+{% if query_type == 'menu' %}
+    Let me show you the menu details.
+    You can view the available items and their prices.
+{% elif query_type == 'services' %}
+    Here are the services we offer.
+    I will provide the details about dining options, delivery, etc.
+{% elif query_type == 'pricing' %}
+    Let me show you the pricing information for our offerings.
+    Please note that prices may vary based on the location.
+{% elif query_type == 'hours' %}
+    Here's our opening and closing time for today.
+    Please let me know if you need information for a specific day.
+{% else %}
+    I'm not sure what you're asking for. Could you clarify whether you need menu, services, pricing, or hours information?
+{% endif %}

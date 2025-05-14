@@ -1,0 +1,8 @@
+{% if booking_id %}
+    I see that you're trying to cancel your booking.
+    Please confirm if you'd like to proceed with the cancellation for booking ID {{ booking_id }}.
+    Type "yes" to cancel, or "no" if you'd like to keep the booking.
+{% else %}
+    In order to cancel your booking, I'll need the booking reference ID.
+    Could you please provide your booking ID?
+{% endif %}

@@ -1,0 +1,23 @@
+{
+  "name": "voice-agent-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "memory-cache": "^0.2.0",
+    "node-cache": "^5.1.2",
+    "nunjucks": "^3.2.4",
+    "path": "^0.12.7",
+    "winston": "^3.17.0"
+  }
+}

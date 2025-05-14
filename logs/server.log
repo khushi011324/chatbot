@@ -1,0 +1,9 @@
+{"level":"info","message":"Server started on port 3000"}
+{"level":"info","message":"Server started on port 3000"}
+{"level":"info","message":"Incoming request: GET /get-info?location=bangalore&queryType=menu"}
+{"level":"error","message":"File read error: ENOENT: no such file or directory, open 'C:\\Users\\HP\\OneDrive\\Desktop\\voice-agent-backend\\data\\bangalore\\menu.json'"}
+{"level":"info","message":"Server started on port 3000"}
+{"level":"info","message":"Incoming request: GET /classify-query?query=Show%20me%20services%20in%20Bangalore"}
+{"level":"info","message":"Incoming request: GET /get-info?location=bangalore&queryType=services&page=1"}
+{"level":"error","message":"File read error: ENOENT: no such file or directory, open 'C:\\Users\\HP\\OneDrive\\Desktop\\voice-agent-backend\\data\\bangalore\\services.json'"}
+{"level":"info","message":"Server started on port 3000"}
