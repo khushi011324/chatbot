@@ -1,0 +1,40 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the code from the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # You can use a different version depending on your project
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Run tests (if you have tests)
+    - name: Run tests
+      run: npm test  # You can replace this if you have a different test command
+
+    # Build your app (if applicable)
+    - name: Build app
+      run: npm run build  # Replace with your build command if necessary
+
+    # Deploy the app (optional - can be added later for deployment steps)
+    # - name: Deploy to Production
+    #   run: some-deploy-script.sh
